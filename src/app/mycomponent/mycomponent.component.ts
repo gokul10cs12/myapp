@@ -13,9 +13,7 @@ serveId= 10;
 
   ngOnInit(): void {
   }
-  getValue(event:any){
-    console.log("test",event);
-  }
+
 get serverStatus(){
   return 'offline';
 }
