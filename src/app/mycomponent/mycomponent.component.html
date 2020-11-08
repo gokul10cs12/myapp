@@ -2,8 +2,13 @@
 <!-- how to add custom directive -->
 <p>mycomponent works!</p>
 <span myDirective>this is something better</span>
-<input type="text" [(ngModel)]="value">
+<input type="text" #simpleText>
+<button (click)="getValue(simpleText)">click me</button>
 
 <p>{{value}}</p>
 <p>serverid :{{serveId}} and server status is {{serverStatus}}</p>
+<button routerLink='/student-login' routerLinkActive='active'>click to login</button> <br>
+<button routerLink='/error' routerLinkActive='active'>error</button> <br> <br>
 
+<a routerLink='child-one'>go to child</a>
+<router-outlet></router-outlet>

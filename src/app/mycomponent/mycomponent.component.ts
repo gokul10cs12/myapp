@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class MycomponentComponent implements OnInit {
   value:string;
 serveId= 10;
-// serverStatus = 'offline' ;
   constructor() { }
 
   ngOnInit(): void {
@@ -16,5 +15,11 @@ serveId= 10;
 
 get serverStatus(){
   return 'offline';
+}
+getValue(event:any): void {
+// let sum = 22+event;
+this.value=event.value;
+console.log(parseInt(event.value));
+
 }
 }
