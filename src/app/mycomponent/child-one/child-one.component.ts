@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./child-one.component.scss']
 })
 export class ChildOneComponent implements OnInit {
-
+  childUser = {
+    name: 'nash',
+    uid: 12333
+  }
   constructor() { }
 
   ngOnInit(): void {

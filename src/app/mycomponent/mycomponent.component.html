@@ -10,5 +10,6 @@
 <button routerLink='/student-login' routerLinkActive='active'>click to login</button> <br>
 <button routerLink='/error' routerLinkActive='active'>error</button> <br> <br>
 
-<a routerLink='child-one'>go to child</a>
+<!-- <a [routerLink]='child-one'>go to child</a> -->
+<a [routerLink]="['/child-one', 123]"> go to child</a>
 <router-outlet></router-outlet>

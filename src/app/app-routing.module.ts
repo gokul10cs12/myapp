@@ -10,8 +10,12 @@ const routes: Routes = [
   {path: 'error', component: SecondRedirectComponent},
   {path: 'main-page', component:MycomponentComponent,
   children:[{
+    path: 'child-one/:name' , component: ChildOneComponent //specific route
+  },
+  {
     path: 'child-one' , component: ChildOneComponent
-  }]
+  }
+]
  },
   { path: '',   redirectTo: '/main-page', pathMatch: 'full' },
   {path : '**', component: PageNotFoundComponent}
