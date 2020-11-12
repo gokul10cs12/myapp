@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetUserDetailsService } from '../services/get-user-details.service';
 
 @Component({
   selector: 'app-to-route',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToRouteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private getUserService: GetUserDetailsService) { }
 
   ngOnInit(): void {
+    this.getUserService.getDetails().subscribe(
+      data => console.log('data-> ', data)
+    );
   }
 
 }

@@ -1,9 +1,7 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
-  ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "user": [
+    { "username": "batman13", "name": "json-server", "age": 12 },
+    { "username": "robin32", "name": "json-server", "age": 23 },
+    { "username": "supeman123", "name": "json-server", "age": 15 }
+  ]
 }
