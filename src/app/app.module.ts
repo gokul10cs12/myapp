@@ -8,6 +8,7 @@ import {FormsModule} from '@angular/forms';
 import { ToRouteComponent } from './to-route/to-route.component';
 import { SecondRedirectComponent } from './second-redirect/second-redirect.component';
 import { ChildOneComponent } from './mycomponent/child-one/child-one.component';
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,8 @@ import { ChildOneComponent } from './mycomponent/child-one/child-one.component';
   imports: [
     AppRoutingModule,
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
