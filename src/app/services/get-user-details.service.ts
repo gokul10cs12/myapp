@@ -14,7 +14,7 @@ export class GetUserDetailsService {
   // tslint:disable-next-line: typeef
   getDetails(): Observable<UserDetails[]> {
      let responseApi =  this.http.get<UserDetails[]>(this._url);
-     console.log(responseApi);
+    //  console.log(responseApi);
     return responseApi;
   }
 

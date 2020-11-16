@@ -13,3 +13,5 @@
 <a routerLink='child-one'>go to child</a>
 <!-- <a [routerLink]="['/child-one', 'name']"> go to child</a> -->
 <router-outlet></router-outlet>
+
+<app-child-one [input]="value" (name)="getName($event)" ></app-child-one>
