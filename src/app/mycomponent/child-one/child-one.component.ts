@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, OnChanges, SimpleChanges, EventEmitter } from '@angular/core';
+import { DataSharedService } from 'src/app/services/data-shared.service';
 
 @Component({
   selector: 'app-child-one',
@@ -13,14 +14,19 @@ export class ChildOneComponent implements OnInit, OnChanges {
   myName:string ="string";
   @Input() input: string;
   @Output() name = new EventEmitter<string>();
-
-  constructor() { }
+  userValue:string;
+ 
+  constructor(
+    private dataUser : DataSharedService
+  ) { }
   ngOnChanges(changes: SimpleChanges): void {
     console.log("child component:", this.input);
   }
 
   ngOnInit(): void {
     // console.log("child component:", this.input);
+    this.dataUser.cast.subscribe(value =>
+      this.userValue = value );
   }
   getValue(event: any) {
     console.log("child button value:", event.value);

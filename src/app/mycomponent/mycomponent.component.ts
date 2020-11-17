@@ -1,17 +1,26 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, OnChanges, SimpleChanges } from '@angular/core';
 import { ChildOneComponent } from './child-one/child-one.component';
-
+import {DataSharedService} from '../services/data-shared.service'
 @Component({
   selector: 'app-mycomponent',
   templateUrl: './mycomponent.component.html',
   styleUrls: ['./mycomponent.component.scss']
 })
-export class MycomponentComponent implements OnInit, AfterViewInit {
+export class MycomponentComponent implements OnInit, AfterViewInit, OnChanges {
   value: string;
   serveId = 10;
-  constructor() { }
+  userValue:string;
+    
   @ViewChild(ChildOneComponent) childComponent;
   myName:string;
+
+  constructor(
+  private dataService : DataSharedService 
+  ) { }
+
+  ngOnChanges(): void {
+  
+  }
 
     /*
 * ViewChild to pass the value from child to parent i.e one component to be injected to another
@@ -26,6 +35,11 @@ giving the parent to access its attributes and func. CAVIET : child won't be ava
   }
 
   ngOnInit(): void {
+    this.dataService.cast.subscribe( value =>
+      this.userValue = value
+      );
+      console.log(this.userValue);
+      
   }
 
   get serverStatus() {
@@ -33,8 +47,7 @@ giving the parent to access its attributes and func. CAVIET : child won't be ava
   }
   getValue(event: any): void {
     // let sum = 22+event;
-    this.value = event.value;
-    console.log(parseInt(event.value));
+    this.dataService.passValue(event.value);
   }
 
   getName(event:any){
